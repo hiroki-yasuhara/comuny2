@@ -29,7 +29,7 @@ class CommunityController extends Controller
         $authId = Auth::id();
         $likeCommunities = Like::select('likes.community_id as id','community_name')
         ->join('communities','likes.community_id','=','communities.id')->where('likes.user_id','=',$authId)
-        ->get();
+        ->orderBy('likes.community_id')->get();
         return view('community/index',compact('communities','likeCommunities'));
         //return view("community/index");
     }

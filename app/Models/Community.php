@@ -14,6 +14,10 @@ class Community extends Model
     {
       return $this->hasMany('App\Models\Like');
     }
+    public function chats()
+    {
+      return $this->hasMany('App\Models\Chat');
+    }
     public function like_by()
     {
       return Like::where('user_id', Auth::user()->id)->first();
