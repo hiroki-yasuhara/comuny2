@@ -23,7 +23,7 @@
                     <td>
                         <a href="/community/{{$community->id}}/show">{{ $community->id }}</a>
                     </td>
-                    <td><img src="{{ asset('storage/' . $community['image']) }}"　style="width: 50px; height: 50px;"></td>
+                    <td><img src="{{ asset('storage/' . $community['image']) }}" style="width: 50px; height: 50px;"></td>
                     <td>{{ $community->community_name }}</td>
                     <td>{{ $community->category }}</td>
                     <td>{{ $community->area }}</td>
