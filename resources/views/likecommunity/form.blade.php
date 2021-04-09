@@ -32,6 +32,11 @@
                         </button>
                     {!! Form::close() !!}
                 @endif
+                {{ Form::model($community, array('action' => array([App\Http\Controllers\CommunityChatController::class, 'index2'],$community->id))) }}
+                        <button type="submit" class="btn btn-xs btn-primary">
+                        コミュニティチャット
+                        </button>
+                    {!! Form::close() !!}
             </div>
         </div>
         <div class="form-group row">

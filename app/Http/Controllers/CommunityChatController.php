@@ -11,4 +11,9 @@ class CommunityChatController extends Controller
     {
         return view('community_chat/index');
     }
+    public function index2(Request $request,$id)
+    {   
+        session()->put(['community_id'=>$id]);
+        return view('community_chat/index');
+    }
 }

@@ -31,10 +31,12 @@ Route::post('/posts/{post}/likes/{like}',  [App\Http\Controllers\LikesController
 Route::get('/communityregister/index', [App\Http\Controllers\CommunityRegisterController::class, 'index']);
 Route::get('likecommunity/{community}/show', [App\Http\Controllers\LikeCommunityController::class, 'show']);
 
+Route::post('/posts/{post}/communitychat', [App\Http\Controllers\CommunityChatController::class, 'index2']);
+
 Route::get('chat/index', [App\Http\Controllers\CommunityChatController::class, 'index']);
 Route::get('messages', 'ChatsController@fetchMessages');
 
-Route::get('ajax/chat', [App\Http\Controllers\Ajax\ChatController::class, 'index']);// メッセージ一覧を取得
+Route::get('ajax/chat/', [App\Http\Controllers\Ajax\ChatController::class, 'index']);// メッセージ一覧を取得
 Route::post('/ajax/chat', [App\Http\Controllers\Ajax\ChatController::class, 'create']); // チャット登録
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

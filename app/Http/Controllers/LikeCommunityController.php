@@ -26,7 +26,6 @@ class LikeCommunityController extends Controller
         $likeUsers = Like::select('likes.user_id as id','name')
         ->join('users','likes.user_id','=','users.id')->where('likes.community_id','=',$id)
         ->orderBy('likes.user_id')->get();
-        eval(\Psy\sh());
         return view('likecommunity/show',compact('community','category_id_loop','area_id_loop','like','likeUsers'));
     }
 
